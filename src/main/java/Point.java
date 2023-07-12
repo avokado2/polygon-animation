@@ -1,31 +1,40 @@
 import java.io.Serializable;
 import java.util.Objects;
 
-
+/*
+ * A point in a two-dimensional space. Stores coordinates as double, but public getters return rounded int,
+ *  which is convenient for drawing shapes.
+ *
+ */
 public class Point implements Serializable {
-        private double x;
-        private double y;
-    public Point(){
+    private double x;
+    private double y;
+
+    public Point() {
 
     }
+
     public Point(int x, int y) {
         this.x = x;
         this.y = y;
     }
+
     public Point(double x, double y) {
         this.x = x;
         this.y = y;
     }
 
-    public Point copy(){
-        return new Point(x , y);
+    public Point copy() {
+        return new Point(x, y);
     }
+
     public void rotate(double alpha) {
         double xPrev = this.x;
         this.x = this.x * Math.cos(alpha) + this.y * Math.sin(alpha);
         this.y = this.y * Math.cos(alpha) - xPrev * Math.sin(alpha);
 
     }
+
     public void rotate(double alpha, Point rotateAxis) {
         this.x = this.x - rotateAxis.getX();
         this.y = this.y - rotateAxis.getY();
@@ -40,7 +49,7 @@ public class Point implements Serializable {
     }
 
     public int getX() {
-        return (int)Math.round(x);
+        return (int) Math.round(x);
     }
 
     public void setX(int x) {
@@ -48,7 +57,7 @@ public class Point implements Serializable {
     }
 
     public int getY() {
-        return (int)Math.round(y);
+        return (int) Math.round(y);
     }
 
     public void setY(int y) {
