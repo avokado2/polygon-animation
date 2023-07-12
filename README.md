@@ -1,2 +1,2 @@
 # polygon-animation
-my first java program. It allows you to draw a polygon with a given number of vertices and change the coordinates of both individual vertices and all vertices (move, rotate the figure around the center).
+my first java program. It allows you to draw a polygon with a given number of vertices and change the coordinates of both individual vertices and all vertices (move, rotate the figure around the center). Each change can be saved as a separate frame to a file and then play this file with 60 fps animation between the saved frames. The animation supports setting different Easings (easings.net)
