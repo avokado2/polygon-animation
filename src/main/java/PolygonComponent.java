@@ -30,7 +30,7 @@ public class PolygonComponent extends FigureComponent {
 
     private Easing easing;
 
-    public int calculateAnimationCor(int a, int b, int totalCount, int counter){
+    public int calculateAnimationCor(int a, int b, int totalCount, int counter) {
         //
         double k = ((double) counter) / totalCount;
         k = 1 - k;
@@ -38,12 +38,13 @@ public class PolygonComponent extends FigureComponent {
         if (a > b) {
             double ab = a - b;
             return (int) Math.round(a - k * ab);
-        }else {
+        } else {
             double ab = b - a;
             return (int) Math.round(a + k * ab);
         }
     }
-    public void animateto(Polygon dest, AnimationCallback callback){
+
+    public void animateto(Polygon dest, AnimationCallback callback) {
         Polygon polygonc = polygon.copy();
         animateCounter = 62;
 
@@ -62,7 +63,7 @@ public class PolygonComponent extends FigureComponent {
                 }
                 animateCounter--;
                 onFigureChanged();
-                if (animateCounter == 0 ) {
+                if (animateCounter == 0) {
                     timer.stop();
                     callback.onAnimationEnd();
                 }
@@ -70,6 +71,7 @@ public class PolygonComponent extends FigureComponent {
         });
         timer.start();
     }
+
     @Override
     protected void paintComponent(Graphics g) {
         int[] xcoordinates = new int[polygon.getPoints().size()];
@@ -86,7 +88,7 @@ public class PolygonComponent extends FigureComponent {
     public PolygonComponent(Color color, Polygon polygon) {
         this.color = color;
         this.polygon = polygon;
-        int i =0;
+        int i = 0;
         for (Point point : polygon.getPoints()) {
             VertexComponent v = new VertexComponent(color, point, this, i);
             i++;
@@ -96,7 +98,7 @@ public class PolygonComponent extends FigureComponent {
         this.center = new CenterComponent(color, polygon.getCenter(), this);
         this.add(center);
 
-        this.rotate = new RotateComponent(color,polygon, this);
+        this.rotate = new RotateComponent(color, polygon, this);
         this.add(rotate);
     }
 
