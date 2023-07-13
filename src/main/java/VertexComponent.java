@@ -14,14 +14,15 @@ public class VertexComponent extends JComponent {
         g.setColor(color);
         g.fillRect(0, 0, 14, 14);
         g.setColor(Color.black);
-        g.drawString("" + index, (index<10) ? 4 : 0,10);
+        g.drawString("" + index, (index < 10) ? 4 : 0, 10);
     }
+
     public VertexComponent(Color color, Point centre, FigureComponent figureComponent, int i) {
         this.index = i;
         this.color = color;
         this.centre = centre;
         this.figureComponent = figureComponent;
-        this.setBounds(centre.getX()-7, centre.getY()-7, centre.getX()+7, centre.getY()+7);
+        this.setBounds(centre.getX() - 7, centre.getY() - 7, centre.getX() + 7, centre.getY() + 7);
         this.addMouseMotionListener(new MouseMotionAdapter() {
             @Override
             public void mouseDragged(MouseEvent e) {
