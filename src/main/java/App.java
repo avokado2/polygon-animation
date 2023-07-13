@@ -13,12 +13,12 @@ public class App {
         Triangle t = new Triangle(new Point(150, 100), new Point(100, 200), new Point(200, 200));
         Point point1 = new Point(10, 5);
         File file = new File("C:/users/vlad/desktop/2.dat");
-       ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(file));
+        ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(file));
         os.writeObject(t);
         os.writeObject(point1);
         os.close();
-       ObjectInputStream os1 = new ObjectInputStream(new FileInputStream(file));
-       Triangle t2 = (Triangle) os1.readObject();
+        ObjectInputStream os1 = new ObjectInputStream(new FileInputStream(file));
+        Triangle t2 = (Triangle) os1.readObject();
 //        Point point3 = (Point) os1.readObject();
 //        System.out.println(t.getP1().getX() + " " + t.getP1().getY());
 //       System.out.println(point3.getX() + " " + point3.getY());
