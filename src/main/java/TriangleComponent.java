@@ -10,15 +10,14 @@ public class TriangleComponent extends FigureComponent {
     private CenterComponent center;
 
 
-
     @Override
     protected void paintComponent(Graphics g) {
         Point p1 = triangle.getP1();
         Point p2 = triangle.getP2();
         Point p3 = triangle.getP3();
         g.setColor(color);
-        g.drawPolygon(new int[] {p1.getX(), p2.getX(), p3.getX()},
-                new int[] {p1.getY(), p2.getY(), p3.getY()}, 3);
+        g.drawPolygon(new int[]{p1.getX(), p2.getX(), p3.getX()},
+                new int[]{p1.getY(), p2.getY(), p3.getY()}, 3);
 
     }
 
