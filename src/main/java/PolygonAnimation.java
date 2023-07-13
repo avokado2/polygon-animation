@@ -9,8 +9,9 @@ import java.io.*;
 import java.util.ArrayList;
 
 
-public class PolygonAnimation extends JFrame{
-private int index = 1;
+public class PolygonAnimation extends JFrame {
+    private int index = 1;
+
     public PolygonAnimation() throws IOException, ClassNotFoundException {
 
         // создание окна
@@ -20,7 +21,7 @@ private int index = 1;
         java.util.List<Polygon> polygons = new ArrayList<>();
         for (int o = 0; o < 1000; o++) {
             try {
-                polygons.add((Polygon)is.readObject());
+                polygons.add((Polygon) is.readObject());
             } catch (Exception ignore) {
             }
         }
@@ -28,7 +29,7 @@ private int index = 1;
         // выход при закрытии окна
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         // определение многослойной панели
-        JLayeredPane lp=getLayeredPane();
+        JLayeredPane lp = getLayeredPane();
         //for (int i = 0; i < 20; i++) {
 //            java.util.List<Point> points = new ArrayList<Point>();
 //            points.add(new Point(150, 100));
@@ -36,12 +37,12 @@ private int index = 1;
 //            points.add(new Point(150, 300));
 //            points.add(new Point(100, 200));
 
-            Polygon polygon = polygons.get(0);
-            polygon = polygon.copy();
-            PolygonComponent polygonComponent = new PolygonComponent(Color.red, polygon);
-            polygonComponent.setEasing(new EaseInOutElastic());
-            polygonComponent.setBounds(0, 0, 1600, 1650);
-            lp.add(polygonComponent, JLayeredPane.POPUP_LAYER);
+        Polygon polygon = polygons.get(0);
+        polygon = polygon.copy();
+        PolygonComponent polygonComponent = new PolygonComponent(Color.red, polygon);
+        polygonComponent.setEasing(new EaseInOutElastic());
+        polygonComponent.setBounds(0, 0, 1600, 1650);
+        lp.add(polygonComponent, JLayeredPane.POPUP_LAYER);
 
         JButton button = new JButton("test");
         lp.add(button, JLayeredPane.POPUP_LAYER);
@@ -52,34 +53,35 @@ private int index = 1;
                 if (index >= polygons.size()) {
                     index = 0;
                 }
-                    Polygon pc = polygons.get(index);
-                    polygonComponent.animateto(pc, new AnimationCallback() {
-                        @Override
-                        public void onAnimationEnd() {
-                            actionPerformed(e);
-                        }
-                    });
-                    index++;
+                Polygon pc = polygons.get(index);
+                polygonComponent.animateto(pc, new AnimationCallback() {
+                    @Override
+                    public void onAnimationEnd() {
+                        actionPerformed(e);
+                    }
+                });
+                index++;
 
             }
         });
 
-            //Triangle t = new Triangle(new Point(150, 100), new Point(100, 200), new Point(200, 200));
-            //TriangleComponent figure = new TriangleComponent(Color.magenta, t);
-            //t.rotate(2*Math.PI * i / 20, center);
-            //figure.setBounds(0, 0, 600, 650);
-            //lp.add(figure, JLayeredPane.POPUP_LAYER);
+        //Triangle t = new Triangle(new Point(150, 100), new Point(100, 200), new Point(200, 200));
+        //TriangleComponent figure = new TriangleComponent(Color.magenta, t);
+        //t.rotate(2*Math.PI * i / 20, center);
+        //figure.setBounds(0, 0, 600, 650);
+        //lp.add(figure, JLayeredPane.POPUP_LAYER);
 
-            //PolygonComponent figure2 = new PolygonComponent(Color.red, polygon);
-            //figure2.setBounds(0, 0, 600, 650);
-            //lp.add(figure2, JLayeredPane.POPUP_LAYER);
+        //PolygonComponent figure2 = new PolygonComponent(Color.red, polygon);
+        //figure2.setBounds(0, 0, 600, 650);
+        //lp.add(figure2, JLayeredPane.POPUP_LAYER);
         //}
         // определение размера и открытие окна
-        setSize(600,650);
+        setSize(600, 650);
         setVisible(true);
 
 
     }
+
     public static void main(String[] args) throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
         UIManager.setLookAndFeel(
                 UIManager.getSystemLookAndFeelClassName());
