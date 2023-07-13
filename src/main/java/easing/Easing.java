@@ -1,5 +1,5 @@
 package easing;
 
 public interface Easing {
-    double calculateKt (double t);
+    double calculateKt(double t);
 }
