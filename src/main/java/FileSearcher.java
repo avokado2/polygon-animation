@@ -1,12 +1,14 @@
 import java.io.File;
 
-public class FileSearcher implements FileSearcherI{
+public class FileSearcher implements FileSearcherI {
 
     private String path;
     private String fileName;
-    protected FileSearcher(){
+
+    protected FileSearcher() {
 
     }
+
     public FileSearcher(String path, String fileName) {
         this.path = path;
         this.fileName = fileName;
