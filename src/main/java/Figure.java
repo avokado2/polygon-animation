@@ -4,6 +4,7 @@ public abstract class Figure implements Serializable {
     public abstract double square();
 
     public abstract void rotate(double alpha);
+
     public abstract void rotate(double alpha, Point rotateAxis);
 
     public abstract Point getCenter();
