@@ -42,7 +42,7 @@ public class RotateComponent extends JComponent {
                 int yc = polygon.getCenter().getY();
                 int x0 = polygon.getPoints().get(0).getX();
                 int y0 = polygon.getPoints().get(0).getY();
-                int x0M =  x0 + e.getX();
+                int x0M = x0 + e.getX();
                 int y0M = y0 + e.getY();
 
                 //переносим систему координат в точку хс ус
@@ -66,7 +66,7 @@ public class RotateComponent extends JComponent {
 
     public void setCentre(Point centre) {
         this.centre = centre;
-        setBounds( ((polygon.getCenter().getX() + polygon.getPoints().get(0).getX()) / 2)- 7, ((polygon.getCenter().getY() + polygon.getPoints().get(0).getY()) / 2) - 7, 14, 14);
+        setBounds(((polygon.getCenter().getX() + polygon.getPoints().get(0).getX()) / 2) - 7, ((polygon.getCenter().getY() + polygon.getPoints().get(0).getY()) / 2) - 7, 14, 14);
     }
 }
 
