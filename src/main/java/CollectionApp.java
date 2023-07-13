@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class CollectionApp {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Collection collection = null;
         List list = null;
         // ArrayList это список который оптимально реалиует  получение элемента списка по индексу
@@ -69,10 +69,10 @@ public class CollectionApp {
         String mapP = testMap.get(23);
 
         //циклы по коллекциям
-        for(String fSt:setT) {
+        for (String fSt : setT) {
             System.out.println(fSt);
         }
-        for(Map.Entry<Integer, String> fMap: testMap.entrySet()) {
+        for (Map.Entry<Integer, String> fMap : testMap.entrySet()) {
             System.out.println(fMap.getKey() + " = " + fMap.getValue());
         }
 
