@@ -1,3 +1,3 @@
 public interface AnimationCallback {
-     void onAnimationEnd();
+    void onAnimationEnd();
 }
